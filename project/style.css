@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   line-height: 1.5;
@@ -12,6 +16,10 @@ body {
   min-width: 320px;
   min-height: 100vh;
   background: linear-gradient(135deg, #1a1b1e 0%, #2d2f35 100%);
+}
+
+p {
+  color: #1a1b1e;
 }
 
 #app {
@@ -39,7 +47,7 @@ body {
 }
 
 .header p {
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(0, 0, 0, 0.6);
   margin: 0.5rem 0;
 }
 
@@ -168,12 +176,22 @@ button:disabled {
   animation: typing 1.4s infinite;
 }
 
-.typing-dot:nth-child(2) { animation-delay: 0.2s; }
-.typing-dot:nth-child(3) { animation-delay: 0.4s; }
+.typing-dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
 
 @keyframes typing {
-  0%, 60%, 100% { transform: translateY(0); }
-  30% { transform: translateY(-4px); }
+  0%, 60%, 100% {
+    transform: translateY(0);
+  }
+
+  30% {
+    transform: translateY(-4px);
+  }
 }
 
 @media (prefers-color-scheme: light) {
@@ -181,39 +199,70 @@ button:disabled {
     background-color: #f8f9fa;
     color: #213547;
   }
-  
+
   body {
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
   }
-  
+
   .chat-container {
     background: rgba(255, 255, 255, 0.8);
     border: 1px solid rgba(0, 0, 0, 0.1);
   }
-  
+
   .user-message {
     background: linear-gradient(135deg, #646cff 0%, #535bf2 100%);
     color: white;
   }
-  
+
   .ai-message {
     background: white;
     border: 1px solid rgba(0, 0, 0, 0.1);
     color: #213547;
   }
-  
+
   .message pre {
     background: rgba(0, 0, 0, 0.05);
   }
-  
+
   input {
     background: white;
     border-color: #ddd;
     color: #213547;
   }
-  
+
   .input-container {
     background: white;
     border: 1px solid rgba(0, 0, 0, 0.1);
   }
+}
+
+.dark-mode {
+  background-color: #1a1b1e;
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.dark-mode .chat-container {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .header h1 {
+  background: linear-gradient(45deg, #646cff, #9089fc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dark-mode .input-container {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .message pre {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode input {
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
 }

@@ -22,6 +22,29 @@ app.innerHTML = `
     <button id="sendButton">Enviar</button>
   </div>
 `
+ // Função para alternar entre modo claro e escuro
+ function toggleDarkMode() {
+  // Alterna a classe 'dark-mode' no body
+  document.body.classList.toggle('dark-mode');
+}
+
+// Adiciona um botão para alternar o tema
+const darkModeButton = document.createElement('button');
+darkModeButton.textContent = 'Alternar Tema';
+darkModeButton.style.position = 'fixed';
+darkModeButton.style.top = '20px';
+darkModeButton.style.right = '20px';
+darkModeButton.style.padding = '10px 20px';
+darkModeButton.style.backgroundColor = '#4CAF50';
+darkModeButton.style.color = 'white';
+darkModeButton.style.border = 'none';
+darkModeButton.style.borderRadius = '5px';
+darkModeButton.style.cursor = 'pointer';
+
+darkModeButton.addEventListener('click', toggleDarkMode);
+
+// Adiciona o botão ao body
+document.body.appendChild(darkModeButton);
 
 const chatContainer = document.getElementById('chatContainer')
 const userInput = document.getElementById('userInput')
